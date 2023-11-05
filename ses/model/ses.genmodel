@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel"
+    modelDirectory="/ses/src-gen" creationIcons="false" editDirectory="/ses.edit/src-gen"
+    editorDirectory="/ses.editor/src-gen" modelPluginID="ses" modelName="Ses" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    codeFormatting="true" importerID="org.eclipse.emf.importer.ecore" complianceLevel="18.0"
+    copyrightFields="false" operationReflection="true" importOrganizing="true">
+  <foreignModel>ses.ecore</foreignModel>
+  <testsDirectory xsi:nil="true"/>
+  <genPackages prefix="Ses" disposableProviderFactory="true" ecorePackage="ses.ecore#/">
+    <genClasses ecoreClass="ses.ecore#//Entity">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ses.ecore#//Entity/childRelations"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ses.ecore#//Entity/name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ses.ecore#//Entity/ses"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ses.ecore#//Entity/variables"/>
+      <genOperations ecoreOperation="ses.ecore#//Entity/toString"/>
+    </genClasses>
+    <genClasses ecoreClass="ses.ecore#//RootEntity"/>
+    <genClasses ecoreClass="ses.ecore#//NodeEntity">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ses.ecore#//NodeEntity/parentRelation"/>
+    </genClasses>
+    <genClasses ecoreClass="ses.ecore#//Aspect"/>
+    <genClasses ecoreClass="ses.ecore#//Specialization"/>
+    <genClasses ecoreClass="ses.ecore#//Multiaspect"/>
+    <genClasses ecoreClass="ses.ecore#//Relation">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ses.ecore#//Relation/parentEntity"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ses.ecore#//Relation/childEntities"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ses.ecore#//Relation/name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ses.ecore#//Relation/ses"/>
+      <genOperations ecoreOperation="ses.ecore#//Relation/setParentEntity">
+        <genParameters ecoreParameter="ses.ecore#//Relation/setParentEntity/name"/>
+      </genOperations>
+    </genClasses>
+    <genClasses ecoreClass="ses.ecore#//Variable">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ses.ecore#//Variable/name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ses.ecore#//Variable/ses"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ses.ecore#//Variable/range"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ses.ecore#//Variable/entity"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ses.ecore#//Variable/dependsOn"/>
+      <genOperations ecoreOperation="ses.ecore#//Variable/setEntity">
+        <genParameters ecoreParameter="ses.ecore#//Variable/setEntity/name"/>
+      </genOperations>
+      <genOperations ecoreOperation="ses.ecore#//Variable/addDependeeVariable">
+        <genParameters ecoreParameter="ses.ecore#//Variable/addDependeeVariable/variable"/>
+        <genParameters ecoreParameter="ses.ecore#//Variable/addDependeeVariable/entity"/>
+      </genOperations>
+    </genClasses>
+    <genClasses ecoreClass="ses.ecore#//Range">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ses.ecore#//Range/variable"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ses.ecore#//Range/ses"/>
+      <genOperations ecoreOperation="ses.ecore#//Range/setVariable">
+        <genParameters ecoreParameter="ses.ecore#//Range/setVariable/variable"/>
+        <genParameters ecoreParameter="ses.ecore#//Range/setVariable/entity"/>
+      </genOperations>
+    </genClasses>
+    <genClasses ecoreClass="ses.ecore#//NumberRange">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ses.ecore#//NumberRange/isLeftClosed"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ses.ecore#//NumberRange/isRightClosed"/>
+    </genClasses>
+    <genClasses ecoreClass="ses.ecore#//StringRange">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ses.ecore#//StringRange/range"/>
+    </genClasses>
+    <genClasses ecoreClass="ses.ecore#//BooleanRange"/>
+    <genClasses ecoreClass="ses.ecore#//IntegerRange">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ses.ecore#//IntegerRange/leftBound"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ses.ecore#//IntegerRange/rightBound"/>
+    </genClasses>
+    <genClasses ecoreClass="ses.ecore#//SES">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ses.ecore#//SES/variables"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ses.ecore#//SES/entities"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ses.ecore#//SES/relations"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ses.ecore#//SES/ranges"/>
+    </genClasses>
+    <genClasses ecoreClass="ses.ecore#//FloatingPointRange">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ses.ecore#//FloatingPointRange/leftBound"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ses.ecore#//FloatingPointRange/rightBound"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

@@ -1,0 +1,7 @@
+From a physical perspective, a book is made of a front cover, a core and a back cover.
+From the content perspective, a book is made of a preface and a main body.
+From the physical perspective, the core is made of more than one page.
+The front cover can be red or blue in color.
+A page can be cardboard or paper in material.
+A page can be white, turquoise, or black in color.
+A page has an amount of lines, a margin size and a page size. The range of the page's margin size is float with values (1,4].
