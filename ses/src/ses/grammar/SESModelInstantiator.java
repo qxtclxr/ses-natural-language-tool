@@ -375,7 +375,15 @@ public class SESModelInstantiator extends SESGrammarBaseListener {
 	@Override
 	public void exitAspectReutil(AspectReutilContext ctx) {
 		// TODO Auto-generated method stub
-		super.exitAspectReutil(ctx);
+		try {
+			String	relName = ctx.identifier(0).getText(),
+					entityName = ctx.identifier(2).getText(),
+					targetEntityName = ctx.identifier(1).getText();
+			
+			Relation rel = this.getRelationByName(relName, entityName);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 
 	@Override
@@ -394,6 +402,15 @@ public class SESModelInstantiator extends SESGrammarBaseListener {
 	}
 
 	//Auxiliary methods
+	
+	private Relation getRelationByName(String relName, String entityName) throws ConstructDoesNotExistException {
+		Relation rel = this.ses.getRelations().stream().
+				filter(r -> r.getName().equals(relName) && r.getParentEntity().getName().equals(entityName)).
+				findFirst().
+				orElseThrow(() -> new ConstructDoesNotExistException(relName));
+		return rel;
+	}
+	
 	private Variable getVariableByName(String varName, String entityName) throws ConstructDoesNotExistException {
 		Variable var = this.ses.getVariables().stream().
 				filter(v -> v.getName().equals(varName) && v.getEntity().getName().equals(entityName)).

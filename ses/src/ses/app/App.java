@@ -17,7 +17,7 @@ public class App {
 	
 	public static void test() throws IOException {
 		// create a CharStream that reads from standard input
-		CharStream input = CharStreams.fromFileName("C:\\Users\\thejo\\git\\ses-repo\\ses\\src\\ses\\app\\test.txt");
+		CharStream input = CharStreams.fromFileName("C:\\Users\\usuario\\git\\ses-natural-language-tool\\ses\\src\\ses\\app\\test.txt");
 		
 		// create a lexer that feeds off of input CharStream
 		SESGrammarLexer lexer = new SESGrammarLexer(input);
