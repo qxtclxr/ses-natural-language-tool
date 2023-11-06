@@ -6,25 +6,25 @@ ses                     	: sentence+ EOF;
 sentence                	: (aspect | specialization | multiaspect | variable | range | aspectReutil | specReutil | variableDependance) ENDSENTENCE
 							;
 
-aspect                  	: FROM identifier PERSPECTIVE COMMA? identifier TOBE MADE_OF identifierListAnd
+aspect                  	: FROM identifier PERSPECTIVE COMMA? identifier TO_BE MADE_OF identifierListAnd
 							;
 
-specialization				: identifier CANBE identifierListOr IN identifier
+specialization				: identifier CAN_BE identifierListOr IN identifier
 							;
 
-multiaspect             	: FROM identifier PERSPECTIVE COMMA? identifier TOBE MADE_OF MORE_THAN_ONE identifier
+multiaspect             	: FROM identifier PERSPECTIVE COMMA? identifier TO_BE MADE_OF MORE_THAN_ONE identifier
 							;
 
 variable                	: identifier TO_HAVE identifierListAnd
 							;
 
-range                   	: RANGE_OF existingVar TOBE rangeType
+range                   	: RANGE_OF existingVar TO_BE rangeType
 							;
 
-aspectReutil       			: FROM identifier PERSPECTIVE COMMA identifier TOBE LIKE identifier
+aspectReutil       			: FROM identifier PERSPECTIVE COMMA identifier TO_BE LIKE identifier
 							;
 						
-specReutil      			: identifier TOBE LIKE identifier IN identifier
+specReutil      			: identifier TO_BE LIKE identifier IN identifier
 							;
 
 variableDependance			: existingVar DEPENDS_ON existingVarListAnd
@@ -87,7 +87,7 @@ identifier    				: IDENTIFIER+
 //Lexer rules
 FROM                    : F R O M;
 PERSPECTIVE             : P E R S P E C T I V E;
-CANBE                   : C A N ' ' B E;
+CAN_BE                  : C A N ' ' B E;
 MADE_OF                 : M A D E ' ' O F;
 MORE_THAN_ONE           : M O R E ' ' T H A N ' ' O N E;
 TO_HAVE                 : H A S | H A V E;
@@ -102,9 +102,8 @@ FLOATLITERAL            : F L O A T | D O U B L E;
 WITH_VALUES             : W I T H ' ' V A L U E S;
 LIKE                    : L I K E;
 IN                      : I N;
-TOBE                    : I S | A R E;
+TO_BE                   : I S | A R E;
 DEPENDS_ON				: C O M E S ' ' F R O M | D E P E N D S ' ' O N;
-OUTPUT					: O U T P U T;
 COMMA                   : ',';
 ENDSENTENCE             : '!' | '.';
 ENDINTERV               : ']' | ')';

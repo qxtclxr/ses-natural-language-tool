@@ -4,3 +4,5 @@ from a host perspective, the hosts are made of more than one host.
 a host has a number of hosts.
 the range of a host's number of hosts is integer.
 protocols have a protocol type.
+the range of the protocols' protocol type is string with values http, ip, tcp and ethernet.
+the protocols' protocol type depends on the host's number of hosts.
