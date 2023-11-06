@@ -41,9 +41,9 @@ public class SESModelInstantiator extends SESGrammarBaseListener {
 	public void exitAspect(AspectContext ctx) { 
 		try {
 			//Subtree 0 = identifier(0): Matches the name of the aspect relation
-			String name = ctx.identifier(0).getText(); 
+			String name = ctx.identifier(0).getText().toLowerCase(); 
 			//Subtree 1 = identifier(1): Matches the name of the parent entity
-			Entity parentEntity = getEntityByName(ctx.identifier(1).getText());
+			Entity parentEntity = getEntityByName(ctx.identifier(1).getText().toLowerCase());
 			/*Subtree 2 = identifierListAnd:
 			 *Matches a string of the form "component1, component2, ... and componentN".
 			 *The "identifierListAnd" rule attribute is a String list that stores each component as a separate String.*/
@@ -82,13 +82,13 @@ public class SESModelInstantiator extends SESGrammarBaseListener {
 	public void exitSpecialization(SpecializationContext ctx) {
 		try {
 			//Subtree 0 = identifier(0): Matches the name of the parent entity
-			Entity parentEntity = this.getEntityByName(ctx.identifier(0).getText());
+			Entity parentEntity = this.getEntityByName(ctx.identifier(0).getText().toLowerCase());
 			/*Subtree 1 = identifierListAnd:
 			 *Matches a string of the form "component1, component2, ... or componentN".
 			 *The "identifierListOr" rule attribute is a String list that stores each component as a separate String.*/
 			List<String> variantNames = this.ids.get(ctx.identifierListOr());
 			//Subtree 2 = identifier(1): Matches the name of the specialization relation
-			String name = ctx.identifier(1).getText();
+			String name = ctx.identifier(1).getText().toLowerCase();
 			
 			Specialization spec = SesFactory.eINSTANCE.createSpecialization();
 			spec.setName(name);
@@ -119,9 +119,9 @@ public class SESModelInstantiator extends SESGrammarBaseListener {
 	@Override
 	public void exitMultiaspect(MultiaspectContext ctx) { 
 		try {
-			String name = ctx.identifier(0).getText();
-			Entity parentEntity = this.getEntityByName(ctx.identifier(1).getText());
-			String variantName = ctx.identifier(2).getText();
+			String name = ctx.identifier(0).getText().toLowerCase();
+			Entity parentEntity = this.getEntityByName(ctx.identifier(1).getText().toLowerCase());
+			String variantName = ctx.identifier(2).getText().toLowerCase();
 			
 			Multiaspect multiasp = SesFactory.eINSTANCE.createMultiaspect();
 			multiasp.setName(name);
@@ -147,7 +147,7 @@ public class SESModelInstantiator extends SESGrammarBaseListener {
 	@Override
 	public void exitVariable(VariableContext ctx) {
 		try {
-			Entity entity = this.getEntityByName(ctx.identifier().getText());
+			Entity entity = this.getEntityByName(ctx.identifier().getText().toLowerCase());
 			List<String> names = this.ids.get(ctx.identifierListAnd());
 			List<Variable> variables = new ArrayList<>();
 			for(String name : names) {
@@ -168,42 +168,42 @@ public class SESModelInstantiator extends SESGrammarBaseListener {
 	@Override
 	public void exitIdAnd(IdAndContext ctx) {
 		List<String> newIds = new ArrayList<String>();
-		newIds.add(ctx.identifier().getText());
+		newIds.add(ctx.identifier().getText().toLowerCase());
 		this.ids.put(ctx, newIds);
 	}
 	
 	@Override
 	public void exitIdAndList(IdAndListContext ctx) {
 		List<String> auxIds = this.ids.get(ctx.identifierList());
-		auxIds.add(ctx.identifier().getText());
+		auxIds.add(ctx.identifier().getText().toLowerCase());
 		this.ids.put(ctx, auxIds);
 	}
 	
 	@Override
 	public void exitIdOr(IdOrContext ctx) {
 		List<String> newIds = new ArrayList<String>();
-		newIds.add(ctx.identifier().getText());
+		newIds.add(ctx.identifier().getText().toLowerCase());
 		this.ids.put(ctx, newIds);
 	}
 	
 	@Override
 	public void exitIdOrList(IdOrListContext ctx) {
 		List<String> auxIds = this.ids.get(ctx.identifierList());
-		auxIds.add(ctx.identifier().getText());
+		auxIds.add(ctx.identifier().getText().toLowerCase());
 		this.ids.put(ctx, auxIds);
 	}
 	
 	@Override
 	public void exitIdListBaseCase(IdListBaseCaseContext ctx) {
 		List<String> newIds = new ArrayList<String>();
-		newIds.add(ctx.identifier().getText());
+		newIds.add(ctx.identifier().getText().toLowerCase());
 		this.ids.put(ctx, newIds);
 	}
 	
 	@Override
 	public void exitIdListRecursion(IdListRecursionContext ctx) {
 		List<String> auxIds = this.ids.get(ctx.identifierList());
-		auxIds.add(ctx.identifier().getText());
+		auxIds.add(ctx.identifier().getText().toLowerCase());
 		this.ids.put(ctx, auxIds);
 	}
 	
@@ -367,8 +367,8 @@ public class SESModelInstantiator extends SESGrammarBaseListener {
 	@Override
 	public void exitExistingVar(ExistingVarContext ctx) {
 		List<String> entityVariablePair = new ArrayList<>();
-		entityVariablePair.add(ctx.identifier(0).getText());
-		entityVariablePair.add(ctx.identifier(1).getText());
+		entityVariablePair.add(ctx.identifier(0).getText().toLowerCase());
+		entityVariablePair.add(ctx.identifier(1).getText().toLowerCase());
 		this.ids.put(ctx,entityVariablePair);
 	}
 
@@ -376,9 +376,9 @@ public class SESModelInstantiator extends SESGrammarBaseListener {
 	public void exitAspectReutil(AspectReutilContext ctx) {
 		// TODO Auto-generated method stub
 		try {
-			String	relName = ctx.identifier(0).getText(),
-					entityName = ctx.identifier(2).getText(),
-					targetEntityName = ctx.identifier(1).getText();
+			String	relName = ctx.identifier(0).getText().toLowerCase(),
+					entityName = ctx.identifier(2).getText().toLowerCase(),
+					targetEntityName = ctx.identifier(1).getText().toLowerCase();
 			
 			Relation rel = this.getRelationByName(relName, entityName);
 		} catch (Exception e) {
