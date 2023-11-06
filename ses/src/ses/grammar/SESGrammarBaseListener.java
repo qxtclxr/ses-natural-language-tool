@@ -1,4 +1,4 @@
-// Generated from SESGrammar.g4 by ANTLR 4.13.1
+// Generated from SESGrammar.g4 by ANTLR 4.10
 package ses.grammar;
 
 import org.antlr.v4.runtime.ParserRuleContext;
@@ -10,7 +10,6 @@ import org.antlr.v4.runtime.tree.TerminalNode;
  * which can be extended to create a listener which only needs to handle a subset
  * of the available methods.
  */
-@SuppressWarnings("CheckReturnValue")
 public class SESGrammarBaseListener implements SESGrammarListener {
 	/**
 	 * {@inheritDoc}

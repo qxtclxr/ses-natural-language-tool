@@ -95,7 +95,7 @@ public class SESModelInstantiator extends SESGrammarBaseListener {
 			spec.setParentEntity(parentEntity);
 			List<Entity> variants = new ArrayList<>();
 			for(String variantName : variantNames) {
-				createNodeEntity(variantName,spec);
+				variants.add(createNodeEntity(variantName,spec));
 			}
 			
 			//Validate the construct that was just created

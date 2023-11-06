@@ -6,19 +6,19 @@ ses                     	: sentence+ EOF;
 sentence                	: (aspect | specialization | multiaspect | variable | range | aspectReutil | specReutil | variableDependance) ENDSENTENCE
 							;
 
-aspect                  	: FROM identifier PERSPECTIVE COMMA? identifier TOBE MADEOF identifierListAnd
+aspect                  	: FROM identifier PERSPECTIVE COMMA? identifier TOBE MADE_OF identifierListAnd
 							;
 
 specialization				: identifier CANBE identifierListOr IN identifier
 							;
 
-multiaspect             	: FROM identifier PERSPECTIVE COMMA? identifier TOBE MADEOF MORETHANONE identifier
+multiaspect             	: FROM identifier PERSPECTIVE COMMA? identifier TOBE MADE_OF MORE_THAN_ONE identifier
 							;
 
-variable                	: identifier HAS identifierListAnd
+variable                	: identifier TO_HAVE identifierListAnd
 							;
 
-range                   	: RANGEOF existingVar TOBE rangeType
+range                   	: RANGE_OF existingVar TOBE rangeType
 							;
 
 aspectReutil       			: FROM identifier PERSPECTIVE COMMA identifier TOBE LIKE identifier
@@ -27,7 +27,7 @@ aspectReutil       			: FROM identifier PERSPECTIVE COMMA identifier TOBE LIKE i
 specReutil      			: identifier TOBE LIKE identifier IN identifier
 							;
 
-variableDependance			: existingVar DEPENDSON existingVarListAnd
+variableDependance			: existingVar DEPENDS_ON existingVarListAnd
 							;
 
 identifierListAnd			: identifier							#idAnd
@@ -45,15 +45,15 @@ identifierList				: identifier						#idListBaseCase
 rangeType           		: rangeOfString		#rangeTypeString
 							| rangeOfFloat		#rangeTypeFloat
 							| rangeOfInteger	#rangeTypeInteger
-							| BOOLSTR			#rangeTypeBoolean
+							| BOOLEANLITERAL			#rangeTypeBoolean
 							;
 
-rangeOfString				: STRINGSTR									#rangeOfStringUnspecified
-							| STRINGSTR WITHVALUES identifierListAnd	#rangeOfStringSpecified
+rangeOfString				: STRINGLITERAL									#rangeOfStringUnspecified
+							| STRINGLITERAL WITH_VALUES identifierListAnd	#rangeOfStringSpecified
 							;
 
-rangeOfFloat				: FLTSTR							#rangeOfFloatUnspecified
-							| FLTSTR WITHVALUES floatInterval	#rangeOfFloatSpecified
+rangeOfFloat				: FLOATLITERAL							#rangeOfFloatUnspecified
+							| FLOATLITERAL WITH_VALUES floatInterval	#rangeOfFloatSpecified
 							;
 
 floatInterval				: BEGININTERV floatingPoint COMMA floatingPoint ENDINTERV
@@ -63,8 +63,8 @@ floatingPoint				: FLOAT
 							| INTEGER
 							;
 
-rangeOfInteger				: INTSTR						#rangeOfIntegerUnspecified
-							| INTSTR WITHVALUES intInterval	#rangeOfIntegerSpecified
+rangeOfInteger				: INTEGERLITERAL						#rangeOfIntegerUnspecified
+							| INTEGERLITERAL WITH_VALUES intInterval	#rangeOfIntegerSpecified
 							;
 						
 intInterval					: BEGININTERV INTEGER COMMA INTEGER ENDINTERV
@@ -88,22 +88,22 @@ identifier    				: IDENTIFIER+
 FROM                    : F R O M;
 PERSPECTIVE             : P E R S P E C T I V E;
 CANBE                   : C A N ' ' B E;
-MADEOF                  : M A D E ' ' O F;
-MORETHANONE             : M O R E ' ' T H A N ' ' O N E;
-HAS                     : H A S;
-RANGEOF                 : R A N G E ' ' O F;
+MADE_OF                 : M A D E ' ' O F;
+MORE_THAN_ONE           : M O R E ' ' T H A N ' ' O N E;
+TO_HAVE                 : H A S | H A V E;
+RANGE_OF                : R A N G E ' ' O F;
 POSSESSIVE              : '\'' | '\'s';
 OR                      : O R;
 AND                     : A N D;
-STRINGSTR               : S T R I N G;
-BOOLSTR                 : B O O L E A N;
-INTSTR                  : I N T E G E R;
-FLTSTR                  : F L O A T | D O U B L E;
-WITHVALUES              : W I T H ' ' V A L U E S;
+STRINGLITERAL           : S T R I N G;
+BOOLEANLITERAL          : B O O L E A N;
+INTEGERLITERAL          : I N T E G E R;
+FLOATLITERAL            : F L O A T | D O U B L E;
+WITH_VALUES             : W I T H ' ' V A L U E S;
 LIKE                    : L I K E;
 IN                      : I N;
 TOBE                    : I S | A R E;
-DEPENDSON				: C O M E S ' ' F R O M | D E P E N D S ' ' O N;
+DEPENDS_ON				: C O M E S ' ' F R O M | D E P E N D S ' ' O N;
 OUTPUT					: O U T P U T;
 COMMA                   : ',';
 ENDSENTENCE             : '!' | '.';
