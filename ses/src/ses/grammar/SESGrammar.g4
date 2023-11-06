@@ -45,14 +45,14 @@ identifierList				: identifier						#idListBaseCase
 rangeType           		: rangeOfString		#rangeTypeString
 							| rangeOfFloat		#rangeTypeFloat
 							| rangeOfInteger	#rangeTypeInteger
-							| BOOLEANLITERAL			#rangeTypeBoolean
+							| BOOLEANLITERAL	#rangeTypeBoolean
 							;
 
 rangeOfString				: STRINGLITERAL									#rangeOfStringUnspecified
 							| STRINGLITERAL WITH_VALUES identifierListAnd	#rangeOfStringSpecified
 							;
 
-rangeOfFloat				: FLOATLITERAL							#rangeOfFloatUnspecified
+rangeOfFloat				: FLOATLITERAL								#rangeOfFloatUnspecified
 							| FLOATLITERAL WITH_VALUES floatInterval	#rangeOfFloatSpecified
 							;
 
@@ -63,7 +63,7 @@ floatingPoint				: FLOAT
 							| INTEGER
 							;
 
-rangeOfInteger				: INTEGERLITERAL						#rangeOfIntegerUnspecified
+rangeOfInteger				: INTEGERLITERAL							#rangeOfIntegerUnspecified
 							| INTEGERLITERAL WITH_VALUES intInterval	#rangeOfIntegerSpecified
 							;
 						

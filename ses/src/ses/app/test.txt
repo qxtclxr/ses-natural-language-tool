@@ -2,4 +2,5 @@ Network traffic analysis can be host based analysis or network based analysis in
 from an element perspective, a host based analysis is made of hosts, time, protocols and packet info.
 from a host perspective, the hosts are made of more than one host.
 a host has a number of hosts.
+the range of a host's number of hosts is integer.
 protocols have a protocol type.
