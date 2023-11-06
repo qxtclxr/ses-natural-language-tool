@@ -1,4 +1,4 @@
-// Generated from SESGrammar.g4 by ANTLR 4.10
+// Generated from SESGrammar.g4 by ANTLR 4.13.1
 package ses.grammar;
 import org.antlr.v4.runtime.atn.*;
 import org.antlr.v4.runtime.dfa.DFA;
@@ -9,9 +9,9 @@ import java.util.List;
 import java.util.Iterator;
 import java.util.ArrayList;
 
-@SuppressWarnings({"all", "warnings", "unchecked", "unused", "cast"})
+@SuppressWarnings({"all", "warnings", "unchecked", "unused", "cast", "CheckReturnValue"})
 public class SESGrammarParser extends Parser {
-	static { RuntimeMetaData.checkVersion("4.10", RuntimeMetaData.VERSION); }
+	static { RuntimeMetaData.checkVersion("4.13.1", RuntimeMetaData.VERSION); }
 
 	protected static final DFA[] _decisionToDFA;
 	protected static final PredictionContextCache _sharedContextCache =
@@ -109,6 +109,7 @@ public class SESGrammarParser extends Parser {
 		_interp = new ParserATNSimulator(this,_ATN,_decisionToDFA,_sharedContextCache);
 	}
 
+	@SuppressWarnings("CheckReturnValue")
 	public static class SesContext extends ParserRuleContext {
 		public TerminalNode EOF() { return getToken(SESGrammarParser.EOF, 0); }
 		public List<SentenceContext> sentence() {
@@ -151,7 +152,7 @@ public class SESGrammarParser extends Parser {
 				setState(51); 
 				_errHandler.sync(this);
 				_la = _input.LA(1);
-			} while ( (((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << FROM) | (1L << RANGE_OF) | (1L << IDENTIFIER))) != 0) );
+			} while ( (((_la) & ~0x3f) == 0 && ((1L << _la) & 268435586L) != 0) );
 			setState(53);
 			match(EOF);
 			}
@@ -167,6 +168,7 @@ public class SESGrammarParser extends Parser {
 		return _localctx;
 	}
 
+	@SuppressWarnings("CheckReturnValue")
 	public static class SentenceContext extends ParserRuleContext {
 		public TerminalNode ENDSENTENCE() { return getToken(SESGrammarParser.ENDSENTENCE, 0); }
 		public AspectContext aspect() {
@@ -280,6 +282,7 @@ public class SESGrammarParser extends Parser {
 		return _localctx;
 	}
 
+	@SuppressWarnings("CheckReturnValue")
 	public static class AspectContext extends ParserRuleContext {
 		public TerminalNode FROM() { return getToken(SESGrammarParser.FROM, 0); }
 		public List<IdentifierContext> identifier() {
@@ -353,6 +356,7 @@ public class SESGrammarParser extends Parser {
 		return _localctx;
 	}
 
+	@SuppressWarnings("CheckReturnValue")
 	public static class SpecializationContext extends ParserRuleContext {
 		public List<IdentifierContext> identifier() {
 			return getRuleContexts(IdentifierContext.class);
@@ -408,6 +412,7 @@ public class SESGrammarParser extends Parser {
 		return _localctx;
 	}
 
+	@SuppressWarnings("CheckReturnValue")
 	public static class MultiaspectContext extends ParserRuleContext {
 		public TerminalNode FROM() { return getToken(SESGrammarParser.FROM, 0); }
 		public List<IdentifierContext> identifier() {
@@ -481,6 +486,7 @@ public class SESGrammarParser extends Parser {
 		return _localctx;
 	}
 
+	@SuppressWarnings("CheckReturnValue")
 	public static class VariableContext extends ParserRuleContext {
 		public IdentifierContext identifier() {
 			return getRuleContext(IdentifierContext.class,0);
@@ -528,6 +534,7 @@ public class SESGrammarParser extends Parser {
 		return _localctx;
 	}
 
+	@SuppressWarnings("CheckReturnValue")
 	public static class RangeContext extends ParserRuleContext {
 		public TerminalNode RANGE_OF() { return getToken(SESGrammarParser.RANGE_OF, 0); }
 		public ExistingVarContext existingVar() {
@@ -578,6 +585,7 @@ public class SESGrammarParser extends Parser {
 		return _localctx;
 	}
 
+	@SuppressWarnings("CheckReturnValue")
 	public static class AspectReutilContext extends ParserRuleContext {
 		public TerminalNode FROM() { return getToken(SESGrammarParser.FROM, 0); }
 		public List<IdentifierContext> identifier() {
@@ -639,6 +647,7 @@ public class SESGrammarParser extends Parser {
 		return _localctx;
 	}
 
+	@SuppressWarnings("CheckReturnValue")
 	public static class SpecReutilContext extends ParserRuleContext {
 		public List<IdentifierContext> identifier() {
 			return getRuleContexts(IdentifierContext.class);
@@ -694,6 +703,7 @@ public class SESGrammarParser extends Parser {
 		return _localctx;
 	}
 
+	@SuppressWarnings("CheckReturnValue")
 	public static class VariableDependanceContext extends ParserRuleContext {
 		public ExistingVarContext existingVar() {
 			return getRuleContext(ExistingVarContext.class,0);
@@ -741,6 +751,7 @@ public class SESGrammarParser extends Parser {
 		return _localctx;
 	}
 
+	@SuppressWarnings("CheckReturnValue")
 	public static class IdentifierListAndContext extends ParserRuleContext {
 		public IdentifierListAndContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -752,6 +763,7 @@ public class SESGrammarParser extends Parser {
 			super.copyFrom(ctx);
 		}
 	}
+	@SuppressWarnings("CheckReturnValue")
 	public static class IdAndContext extends IdentifierListAndContext {
 		public IdentifierContext identifier() {
 			return getRuleContext(IdentifierContext.class,0);
@@ -766,6 +778,7 @@ public class SESGrammarParser extends Parser {
 			if ( listener instanceof SESGrammarListener ) ((SESGrammarListener)listener).exitIdAnd(this);
 		}
 	}
+	@SuppressWarnings("CheckReturnValue")
 	public static class IdAndListContext extends IdentifierListAndContext {
 		public IdentifierListContext identifierList() {
 			return getRuleContext(IdentifierListContext.class,0);
@@ -837,6 +850,7 @@ public class SESGrammarParser extends Parser {
 		return _localctx;
 	}
 
+	@SuppressWarnings("CheckReturnValue")
 	public static class IdentifierListOrContext extends ParserRuleContext {
 		public IdentifierListOrContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -848,6 +862,7 @@ public class SESGrammarParser extends Parser {
 			super.copyFrom(ctx);
 		}
 	}
+	@SuppressWarnings("CheckReturnValue")
 	public static class IdOrListContext extends IdentifierListOrContext {
 		public IdentifierListContext identifierList() {
 			return getRuleContext(IdentifierListContext.class,0);
@@ -867,6 +882,7 @@ public class SESGrammarParser extends Parser {
 			if ( listener instanceof SESGrammarListener ) ((SESGrammarListener)listener).exitIdOrList(this);
 		}
 	}
+	@SuppressWarnings("CheckReturnValue")
 	public static class IdOrContext extends IdentifierListOrContext {
 		public IdentifierContext identifier() {
 			return getRuleContext(IdentifierContext.class,0);
@@ -933,6 +949,7 @@ public class SESGrammarParser extends Parser {
 		return _localctx;
 	}
 
+	@SuppressWarnings("CheckReturnValue")
 	public static class IdentifierListContext extends ParserRuleContext {
 		public IdentifierListContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -944,6 +961,7 @@ public class SESGrammarParser extends Parser {
 			super.copyFrom(ctx);
 		}
 	}
+	@SuppressWarnings("CheckReturnValue")
 	public static class IdListBaseCaseContext extends IdentifierListContext {
 		public IdentifierContext identifier() {
 			return getRuleContext(IdentifierContext.class,0);
@@ -958,6 +976,7 @@ public class SESGrammarParser extends Parser {
 			if ( listener instanceof SESGrammarListener ) ((SESGrammarListener)listener).exitIdListBaseCase(this);
 		}
 	}
+	@SuppressWarnings("CheckReturnValue")
 	public static class IdListRecursionContext extends IdentifierListContext {
 		public IdentifierListContext identifierList() {
 			return getRuleContext(IdentifierListContext.class,0);
@@ -1038,6 +1057,7 @@ public class SESGrammarParser extends Parser {
 		return _localctx;
 	}
 
+	@SuppressWarnings("CheckReturnValue")
 	public static class RangeTypeContext extends ParserRuleContext {
 		public RangeTypeContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -1049,6 +1069,7 @@ public class SESGrammarParser extends Parser {
 			super.copyFrom(ctx);
 		}
 	}
+	@SuppressWarnings("CheckReturnValue")
 	public static class RangeTypeFloatContext extends RangeTypeContext {
 		public RangeOfFloatContext rangeOfFloat() {
 			return getRuleContext(RangeOfFloatContext.class,0);
@@ -1063,6 +1084,7 @@ public class SESGrammarParser extends Parser {
 			if ( listener instanceof SESGrammarListener ) ((SESGrammarListener)listener).exitRangeTypeFloat(this);
 		}
 	}
+	@SuppressWarnings("CheckReturnValue")
 	public static class RangeTypeStringContext extends RangeTypeContext {
 		public RangeOfStringContext rangeOfString() {
 			return getRuleContext(RangeOfStringContext.class,0);
@@ -1077,6 +1099,7 @@ public class SESGrammarParser extends Parser {
 			if ( listener instanceof SESGrammarListener ) ((SESGrammarListener)listener).exitRangeTypeString(this);
 		}
 	}
+	@SuppressWarnings("CheckReturnValue")
 	public static class RangeTypeIntegerContext extends RangeTypeContext {
 		public RangeOfIntegerContext rangeOfInteger() {
 			return getRuleContext(RangeOfIntegerContext.class,0);
@@ -1091,6 +1114,7 @@ public class SESGrammarParser extends Parser {
 			if ( listener instanceof SESGrammarListener ) ((SESGrammarListener)listener).exitRangeTypeInteger(this);
 		}
 	}
+	@SuppressWarnings("CheckReturnValue")
 	public static class RangeTypeBooleanContext extends RangeTypeContext {
 		public TerminalNode BOOLEANLITERAL() { return getToken(SESGrammarParser.BOOLEANLITERAL, 0); }
 		public RangeTypeBooleanContext(RangeTypeContext ctx) { copyFrom(ctx); }
@@ -1158,6 +1182,7 @@ public class SESGrammarParser extends Parser {
 		return _localctx;
 	}
 
+	@SuppressWarnings("CheckReturnValue")
 	public static class RangeOfStringContext extends ParserRuleContext {
 		public RangeOfStringContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -1169,6 +1194,7 @@ public class SESGrammarParser extends Parser {
 			super.copyFrom(ctx);
 		}
 	}
+	@SuppressWarnings("CheckReturnValue")
 	public static class RangeOfStringSpecifiedContext extends RangeOfStringContext {
 		public TerminalNode STRINGLITERAL() { return getToken(SESGrammarParser.STRINGLITERAL, 0); }
 		public TerminalNode WITH_VALUES() { return getToken(SESGrammarParser.WITH_VALUES, 0); }
@@ -1185,6 +1211,7 @@ public class SESGrammarParser extends Parser {
 			if ( listener instanceof SESGrammarListener ) ((SESGrammarListener)listener).exitRangeOfStringSpecified(this);
 		}
 	}
+	@SuppressWarnings("CheckReturnValue")
 	public static class RangeOfStringUnspecifiedContext extends RangeOfStringContext {
 		public TerminalNode STRINGLITERAL() { return getToken(SESGrammarParser.STRINGLITERAL, 0); }
 		public RangeOfStringUnspecifiedContext(RangeOfStringContext ctx) { copyFrom(ctx); }
@@ -1238,6 +1265,7 @@ public class SESGrammarParser extends Parser {
 		return _localctx;
 	}
 
+	@SuppressWarnings("CheckReturnValue")
 	public static class RangeOfFloatContext extends ParserRuleContext {
 		public RangeOfFloatContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -1249,6 +1277,7 @@ public class SESGrammarParser extends Parser {
 			super.copyFrom(ctx);
 		}
 	}
+	@SuppressWarnings("CheckReturnValue")
 	public static class RangeOfFloatSpecifiedContext extends RangeOfFloatContext {
 		public TerminalNode FLOATLITERAL() { return getToken(SESGrammarParser.FLOATLITERAL, 0); }
 		public TerminalNode WITH_VALUES() { return getToken(SESGrammarParser.WITH_VALUES, 0); }
@@ -1265,6 +1294,7 @@ public class SESGrammarParser extends Parser {
 			if ( listener instanceof SESGrammarListener ) ((SESGrammarListener)listener).exitRangeOfFloatSpecified(this);
 		}
 	}
+	@SuppressWarnings("CheckReturnValue")
 	public static class RangeOfFloatUnspecifiedContext extends RangeOfFloatContext {
 		public TerminalNode FLOATLITERAL() { return getToken(SESGrammarParser.FLOATLITERAL, 0); }
 		public RangeOfFloatUnspecifiedContext(RangeOfFloatContext ctx) { copyFrom(ctx); }
@@ -1318,6 +1348,7 @@ public class SESGrammarParser extends Parser {
 		return _localctx;
 	}
 
+	@SuppressWarnings("CheckReturnValue")
 	public static class FloatIntervalContext extends ParserRuleContext {
 		public TerminalNode BEGININTERV() { return getToken(SESGrammarParser.BEGININTERV, 0); }
 		public List<FloatingPointContext> floatingPoint() {
@@ -1371,6 +1402,7 @@ public class SESGrammarParser extends Parser {
 		return _localctx;
 	}
 
+	@SuppressWarnings("CheckReturnValue")
 	public static class FloatingPointContext extends ParserRuleContext {
 		public TerminalNode FLOAT() { return getToken(SESGrammarParser.FLOAT, 0); }
 		public TerminalNode INTEGER() { return getToken(SESGrammarParser.INTEGER, 0); }
@@ -1418,6 +1450,7 @@ public class SESGrammarParser extends Parser {
 		return _localctx;
 	}
 
+	@SuppressWarnings("CheckReturnValue")
 	public static class RangeOfIntegerContext extends ParserRuleContext {
 		public RangeOfIntegerContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -1429,6 +1462,7 @@ public class SESGrammarParser extends Parser {
 			super.copyFrom(ctx);
 		}
 	}
+	@SuppressWarnings("CheckReturnValue")
 	public static class RangeOfIntegerUnspecifiedContext extends RangeOfIntegerContext {
 		public TerminalNode INTEGERLITERAL() { return getToken(SESGrammarParser.INTEGERLITERAL, 0); }
 		public RangeOfIntegerUnspecifiedContext(RangeOfIntegerContext ctx) { copyFrom(ctx); }
@@ -1441,6 +1475,7 @@ public class SESGrammarParser extends Parser {
 			if ( listener instanceof SESGrammarListener ) ((SESGrammarListener)listener).exitRangeOfIntegerUnspecified(this);
 		}
 	}
+	@SuppressWarnings("CheckReturnValue")
 	public static class RangeOfIntegerSpecifiedContext extends RangeOfIntegerContext {
 		public TerminalNode INTEGERLITERAL() { return getToken(SESGrammarParser.INTEGERLITERAL, 0); }
 		public TerminalNode WITH_VALUES() { return getToken(SESGrammarParser.WITH_VALUES, 0); }
@@ -1498,6 +1533,7 @@ public class SESGrammarParser extends Parser {
 		return _localctx;
 	}
 
+	@SuppressWarnings("CheckReturnValue")
 	public static class IntIntervalContext extends ParserRuleContext {
 		public TerminalNode BEGININTERV() { return getToken(SESGrammarParser.BEGININTERV, 0); }
 		public List<TerminalNode> INTEGER() { return getTokens(SESGrammarParser.INTEGER); }
@@ -1549,6 +1585,7 @@ public class SESGrammarParser extends Parser {
 		return _localctx;
 	}
 
+	@SuppressWarnings("CheckReturnValue")
 	public static class ExistingVarListAndContext extends ParserRuleContext {
 		public ExistingVarListAndContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -1560,6 +1597,7 @@ public class SESGrammarParser extends Parser {
 			super.copyFrom(ctx);
 		}
 	}
+	@SuppressWarnings("CheckReturnValue")
 	public static class OneExistingVarContext extends ExistingVarListAndContext {
 		public ExistingVarContext existingVar() {
 			return getRuleContext(ExistingVarContext.class,0);
@@ -1574,6 +1612,7 @@ public class SESGrammarParser extends Parser {
 			if ( listener instanceof SESGrammarListener ) ((SESGrammarListener)listener).exitOneExistingVar(this);
 		}
 	}
+	@SuppressWarnings("CheckReturnValue")
 	public static class ManyExistingVarContext extends ExistingVarListAndContext {
 		public ExistingVarListContext existingVarList() {
 			return getRuleContext(ExistingVarListContext.class,0);
@@ -1645,6 +1684,7 @@ public class SESGrammarParser extends Parser {
 		return _localctx;
 	}
 
+	@SuppressWarnings("CheckReturnValue")
 	public static class ExistingVarListContext extends ParserRuleContext {
 		public ExistingVarListContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -1656,6 +1696,7 @@ public class SESGrammarParser extends Parser {
 			super.copyFrom(ctx);
 		}
 	}
+	@SuppressWarnings("CheckReturnValue")
 	public static class ExistingVarListRecursionContext extends ExistingVarListContext {
 		public ExistingVarListContext existingVarList() {
 			return getRuleContext(ExistingVarListContext.class,0);
@@ -1674,6 +1715,7 @@ public class SESGrammarParser extends Parser {
 			if ( listener instanceof SESGrammarListener ) ((SESGrammarListener)listener).exitExistingVarListRecursion(this);
 		}
 	}
+	@SuppressWarnings("CheckReturnValue")
 	public static class ExistingVarListBaseCaseContext extends ExistingVarListContext {
 		public ExistingVarContext existingVar() {
 			return getRuleContext(ExistingVarContext.class,0);
@@ -1750,6 +1792,7 @@ public class SESGrammarParser extends Parser {
 		return _localctx;
 	}
 
+	@SuppressWarnings("CheckReturnValue")
 	public static class ExistingVarContext extends ParserRuleContext {
 		public List<IdentifierContext> identifier() {
 			return getRuleContexts(IdentifierContext.class);
@@ -1797,6 +1840,7 @@ public class SESGrammarParser extends Parser {
 		return _localctx;
 	}
 
+	@SuppressWarnings("CheckReturnValue")
 	public static class IdentifierContext extends ParserRuleContext {
 		public List<TerminalNode> IDENTIFIER() { return getTokens(SESGrammarParser.IDENTIFIER); }
 		public TerminalNode IDENTIFIER(int i) {
